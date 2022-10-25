@@ -155,7 +155,7 @@ class ASPPSeparableConv(nn.Sequential):
 class ASPPPooling(nn.Sequential):
     def __init__(self, in_channels, out_channels):
         super().__init__(
-            nn.AvgPool2d(3, stride=4, padding=0),
+            nn.AvgPool2d(4, stride=4, padding=0),
             nn.Conv2d(in_channels, out_channels, kernel_size=1, bias=False),
             nn.BatchNorm2d(out_channels),
             nn.ReLU(),
